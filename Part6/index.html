@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Part 5</title>
+    <title>Part 6</title>
     <script src="../vue3.js"></script>
 </head>
 <body>
 <div id="app">
-    <p v-html="htmCode"></p>
+    <button v-on:click="increaseValue">Increase Value</button>
+    <button v-on:click="decreaseValue">Decrease Value</button>
+    <p>{{ counter }}</p>
 </div>
 <script src="./index.js"></script>
 </body>
