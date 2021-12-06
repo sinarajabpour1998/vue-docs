@@ -2,7 +2,7 @@
 This is an alternative docs for vue js with implemented examples in separated folders.
 each part has its own code to understand better :)
 
-##Quick Links
+## Quick Links
 * <a href="#create-vue-instance">Part 1: create vue instance</a>
 * <a href="#bind-data-to-tag-attributes">Part 2: bind data to tag attributes</a>
 * <a href="#vue-methods">Part 3: vue methods</a>
@@ -108,6 +108,24 @@ app.mount('#app');
 ```html
 <div id="app">
     <p>{{ testOutput() }}</p>
+</div>
+```
+
+## Part 5
+#### v-html directive
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            htmCode: "<h1>First vue html code</h1>"
+        };
+    }
+});
+app.mount('#app');
+```
+```html
+<div id="app">
+    <p v-html="htmCode"></p>
 </div>
 ```
 
