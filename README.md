@@ -7,6 +7,7 @@ each part has its own code to understand better :)
 * <a href="#bind-data-to-tag-attributes">Part 2: bind data to tag attributes</a>
 * <a href="#vue-methods">Part 3: vue methods</a>
 * <a href="#access-to-data-objects-in-methods">Part 4: access to data objects in methods</a>
+* <a href="#v-html-directive">Part 5: v-html directive</a>
 
 ## Part 1
 #### create vue instance
