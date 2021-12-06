@@ -9,6 +9,7 @@ each part has its own code to understand better :)
 * <a href="#access-to-data-objects-in-methods">Part 4: access to data objects in methods</a>
 * <a href="#v-html-directive">Part 5: v-html directive</a>
 * <a href="#event-binding-v-on-directive">Part 6: event binding, v-on directive</a>
+* <a href="#event-arguments">Part 7: event arguments</a>
 
 ## Part 1
 #### create vue instance
@@ -155,6 +156,37 @@ app.mount('#app');
 <div id="app">
     <button v-on:click="increaseValue">Increase Value</button>
     <button v-on:click="decreaseValue">Decrease Value</button>
+    <p>{{ counter }}</p>
+</div>
+```
+
+## Part 7
+#### event arguments
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            counter: 0
+        };
+    },
+    methods: {
+        increaseValue(input_num = null) {
+            if (input_num == null) { input_num = 1 }
+            console.log(input_num)
+            this.counter += input_num;
+        },
+        decreaseValue(input_num = null) {
+            if (input_num == null) { input_num = 1 }
+            this.counter -= input_num;
+        }
+    }
+});
+app.mount('#app');
+```
+```html
+<div id="app">
+    <button v-on:click="increaseValue(5)">Increase Value</button>
+    <button v-on:click="decreaseValue(10)">Decrease Value</button>
     <p>{{ counter }}</p>
 </div>
 ```
