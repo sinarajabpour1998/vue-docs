@@ -1,15 +1,15 @@
 # Vue 3 Docs: Basics and Core concepts
 
 ## Quick Links
-* <a href="#create-vue-instance">Part 1: create vue instance</a>
-* <a href="#bind-data-to-tag-attributes">Part 2: bind data to tag attributes</a>
-* <a href="#vue-methods">Part 3: vue methods</a>
-* <a href="#access-to-data-objects-in-methods">Part 4: access to data objects in methods</a>
-* <a href="#v-html-directive">Part 5: v-html directive</a>
-* <a href="#event-binding-v-on-directive">Part 6: event binding, v-on directive</a>
-* <a href="#event-arguments">Part 7: event arguments</a>
-* <a href="#v-oninput-directive">Part 8: v-on:input directive</a>
-* <a href="#v-oninput-directive">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
+* <a href="#part-1">Part 1: create vue instance</a>
+* <a href="#part-2">Part 2: bind data to tag attributes</a>
+* <a href="#part-3">Part 3: vue methods</a>
+* <a href="#part-4">Part 4: access to data objects in methods</a>
+* <a href="#part-5">Part 5: v-html directive</a>
+* <a href="#part-6">Part 6: event binding, v-on directive</a>
+* <a href="#part-7">Part 7: event arguments</a>
+* <a href="#part-8">Part 8: v-on:input directive</a>
+* <a href="#part-9">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
 
 ## Part 1
 #### create vue instance
