@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 9</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+    <button type="button" v-on:click.left="leftClickAction">Test Left Click only</button>
+    <button type="button" v-on:click.middle="middleClickAction">Test Middle Click only</button>
+    <button type="button" v-on:click.right="rightClickAction">Test Right Click only</button>
+    <hr>
+    <input type="text" name="test_enter" id="test_enter" v-on:keyup.enter="actionOnEnter" placeholder="Type and press enter...">
+    <hr>
+    <form id="personal" v-on:submit.prevent="submitPersonalForm">
+        <input type="text" name="full_name" id="full_name">
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+    <p>{{ data }}</p>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>

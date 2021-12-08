@@ -9,6 +9,7 @@
 * <a href="#event-binding-v-on-directive">Part 6: event binding, v-on directive</a>
 * <a href="#event-arguments">Part 7: event arguments</a>
 * <a href="#v-oninput-directive">Part 8: v-on:input directive</a>
+* <a href="#v-oninput-directive">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
 
 ## Part 1
 #### create vue instance
@@ -212,5 +213,53 @@ app.mount('#app');
 <div id="app">
     <input type="text" name="full_name" id="full_name" v-on:input="setFullName">
     <p>Your name is : {{ name }}</p>
+</div>
+```
+
+## Part 9
+#### v-on:keyup ,v-on:click and v-on:submit directives, Event modifiers
+
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            data: ''
+        };
+    },
+    methods: {
+        submitPersonalForm() {
+            this.data = "You have been submitted the form !";
+        },
+        leftClickAction() {
+            this.data = "Left clicked";
+        },
+        rightClickAction() {
+            this.data = "Right clicked";
+        },
+        middleClickAction() {
+            this.data = "Middle clicked";
+        },
+        actionOnEnter() {
+            this.data = "Keyup.enter pressed !";
+        }
+    }
+});
+app.mount('#app');
+```
+```html
+<div id="app">
+    <button type="button" v-on:click.left="leftClickAction">Test Left Click only</button>
+    <button type="button" v-on:click.middle="middleClickAction">Test Middle Click only</button>
+    <button type="button" v-on:click.right="rightClickAction">Test Right Click only</button>
+    <hr>
+    <input type="text" name="test_enter" id="test_enter" v-on:keyup.enter="actionOnEnter" placeholder="Type and press enter...">
+    <hr>
+    <form id="personal" v-on:submit.prevent="submitPersonalForm">
+        <input type="text" name="full_name" id="full_name">
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+    <p>{{ data }}</p>
 </div>
 ```
