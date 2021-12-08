@@ -11,6 +11,7 @@
 * <a href="#part-8">Part 8: v-on:input directive</a>
 * <a href="#part-9">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
 * <a href="#part-10">Part 10: v-once</a>
+* <a href="#part-11">Part 11: v-model directive: two-way data binding (v-on + v-bind)</a>
 
 ## Part 1
 #### create vue instance
@@ -262,4 +263,33 @@ methods: {
 <p>
     New value : {{ counter }}
 </p>
+```
+
+## Part 11
+#### v-model: two-way data binding (v-on + v-bind)
+
+```js
+data() {
+    return {
+        fullName: '',
+        data: ''
+    };
+},
+methods: {
+    submitForm() {
+        this.data = 'Your full name is ' + this.fullName;
+    },
+    resetForm() {
+        this.fullName = '';
+        this.data = '-';
+    }
+}
+````
+```html
+<form v-on:submit.prevent="submitForm">
+    <input type="text" name="fullName" id="fullName" v-model="fullName" value="" />
+    <button type="submit">Submit</button>
+    <button type="button" v-on:click="resetForm">Reset</button>
+</form>
+<p>{{ data }}</p>
 ```

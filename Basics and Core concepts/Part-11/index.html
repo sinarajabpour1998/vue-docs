@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 11</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+    <form v-on:submit.prevent="submitForm">
+        <input type="text" name="fullName" id="fullName" v-model="fullName" value="" />
+        <button type="submit">Submit</button>
+        <button type="button" v-on:click="resetForm">Reset</button>
+    </form>
+    <p>{{ data }}</p>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
