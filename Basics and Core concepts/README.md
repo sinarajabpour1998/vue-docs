@@ -13,6 +13,7 @@
 * <a href="#part-10">Part 10: v-once</a>
 * <a href="#part-11">Part 11: v-model directive: two-way data binding (v-on + v-bind)</a>
 * <a href="#part-12">Part 12: computed properties</a>
+* <a href="#part-13">Part 13: watchers</a>
 
 ## Part 1
 #### create vue instance
@@ -319,3 +320,20 @@ Note: computed properties runs once after vue initialization but only runs again
     <hr>
     <p>{{ fullName }}</p>
 ```
+
+## Part 13
+#### watchers
+
+```js
+    watch: {
+        counter(value) {
+            if (value > 50){
+                const that = this;
+                setTimeout(function () {
+                    that.counter = 0;
+                }, 2000);
+            }
+        }
+    },
+```
+
