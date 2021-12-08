@@ -8,7 +8,7 @@
 * <a href="#v-html-directive">Part 5: v-html directive</a>
 * <a href="#event-binding-v-on-directive">Part 6: event binding, v-on directive</a>
 * <a href="#event-arguments">Part 7: event arguments</a>
-* <a href="#v-on:input-directive">Part 8: v-on:input directive</a>
+* <a href="#v-oninput-directive">Part 8: v-on:input directive</a>
 
 ## Part 1
 #### create vue instance
