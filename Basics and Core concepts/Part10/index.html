@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 10</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+<button type="button" v-on:click="addToCounter">Add to counter</button>
+    <p v-once>
+        First value : {{ counter }}
+    </p>
+    <p>
+        New value : {{ counter }}
+    </p>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>

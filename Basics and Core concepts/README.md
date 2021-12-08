@@ -88,178 +88,177 @@ const app = Vue.createApp({
 ## Part 4
 #### access to data objects in methods
 ```js
-const app = Vue.createApp({
-    data() {
+{
+    data()
+    {
         return {
             first: "It's down !",
             second: "It's up !"
         };
-    }
-    , methods: {
-        testOutput() {
+    },
+    methods: {
+        testOutput()
+        {
             const randomNumber = Math.random();
-            if (randomNumber < 0.5){
+            if (randomNumber < 0.5) {
                 return this.first;
-            }else {
+            } else {
                 return this.second;
             }
         }
     }
-});
-app.mount('#app');
+}
 ```
 ```html
-<div id="app">
-    <p>{{ testOutput() }}</p>
-</div>
+<p>{{ testOutput() }}</p>
 ```
 
 ## Part 5
 #### v-html directive
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            htmCode: "<h1>First vue html code</h1>"
-        };
-    }
-});
-app.mount('#app');
+data() {
+    return {
+        htmCode: "<h1>First vue html code</h1>"
+    };
+}
 ```
 ```html
-<div id="app">
-    <p v-html="htmCode"></p>
-</div>
+<p v-html="htmCode"></p>
 ```
 
 ## Part 6
 #### event binding v-on directive
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            counter: 0
-        };
+data() {
+    return {
+        counter: 0
+    };
+},
+methods: {
+    increaseValue() {
+        this.counter ++;
     },
-    methods: {
-        increaseValue() {
-            this.counter ++;
-        },
-        decreaseValue() {
-            this.counter --;
-        }
+    decreaseValue() {
+        this.counter --;
     }
-});
-app.mount('#app');
+}
 ```
 ```html
-<div id="app">
-    <button v-on:click="increaseValue">Increase Value</button>
-    <button v-on:click="decreaseValue">Decrease Value</button>
-    <p>{{ counter }}</p>
-</div>
+<button v-on:click="increaseValue">Increase Value</button>
+<button v-on:click="decreaseValue">Decrease Value</button>
+<p>{{ counter }}</p>
 ```
 
 ## Part 7
 #### event arguments
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            counter: 0
-        };
+data() {
+    return {
+        counter: 0
+    };
+},
+methods: {
+    increaseValue(input_num = null) {
+        if (input_num == null) { input_num = 1 }
+        console.log(input_num)
+        this.counter += input_num;
     },
-    methods: {
-        increaseValue(input_num = null) {
-            if (input_num == null) { input_num = 1 }
-            console.log(input_num)
-            this.counter += input_num;
-        },
-        decreaseValue(input_num = null) {
-            if (input_num == null) { input_num = 1 }
-            this.counter -= input_num;
-        }
+    decreaseValue(input_num = null) {
+        if (input_num == null) { input_num = 1 }
+        this.counter -= input_num;
     }
-});
-app.mount('#app');
+}
 ```
 ```html
-<div id="app">
-    <button v-on:click="increaseValue(5)">Increase Value</button>
-    <button v-on:click="decreaseValue(10)">Decrease Value</button>
-    <p>{{ counter }}</p>
-</div>
+<button v-on:click="increaseValue(5)">Increase Value</button>
+<button v-on:click="decreaseValue(10)">Decrease Value</button>
+<p>{{ counter }}</p>
 ```
 
 ## Part 8
 #### v-on:input directive
 
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            name: ''
-        };
-    },
-    methods: {
-        setFullName(event) {
-            this.name = event.target.value;
-        }
+data() {
+    return {
+        name: ''
+    };
+},
+methods: {
+    setFullName(event) {
+        this.name = event.target.value;
     }
-});
-app.mount('#app');
+}
 ```
 ```html
-<div id="app">
-    <input type="text" name="full_name" id="full_name" v-on:input="setFullName">
-    <p>Your name is : {{ name }}</p>
-</div>
+<input type="text" name="full_name" id="full_name" v-on:input="setFullName">
+<p>Your name is : {{ name }}</p>
 ```
 
 ## Part 9
 #### v-on:keyup ,v-on:click and v-on:submit directives, Event modifiers
 
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            data: ''
-        };
+data() {
+    return {
+        data: ''
+    };
+},
+methods: {
+    submitPersonalForm() {
+        this.data = "You have been submitted the form !";
     },
-    methods: {
-        submitPersonalForm() {
-            this.data = "You have been submitted the form !";
-        },
-        leftClickAction() {
-            this.data = "Left clicked";
-        },
-        rightClickAction() {
-            this.data = "Right clicked";
-        },
-        middleClickAction() {
-            this.data = "Middle clicked";
-        },
-        actionOnEnter() {
-            this.data = "Keyup.enter pressed !";
-        }
+    leftClickAction() {
+        this.data = "Left clicked";
+    },
+    rightClickAction() {
+        this.data = "Right clicked";
+    },
+    middleClickAction() {
+        this.data = "Middle clicked";
+    },
+    actionOnEnter() {
+        this.data = "Keyup.enter pressed !";
     }
-});
-app.mount('#app');
+}
 ```
 ```html
-<div id="app">
-    <button type="button" v-on:click.left="leftClickAction">Test Left Click only</button>
-    <button type="button" v-on:click.middle="middleClickAction">Test Middle Click only</button>
-    <button type="button" v-on:click.right="rightClickAction">Test Right Click only</button>
-    <hr>
-    <input type="text" name="test_enter" id="test_enter" v-on:keyup.enter="actionOnEnter" placeholder="Type and press enter...">
-    <hr>
-    <form id="personal" v-on:submit.prevent="submitPersonalForm">
-        <input type="text" name="full_name" id="full_name">
-        <button type="submit">
-            Submit
-        </button>
-    </form>
-    <p>{{ data }}</p>
-</div>
+<button type="button" v-on:click.left="leftClickAction">Test Left Click only</button>
+<button type="button" v-on:click.middle="middleClickAction">Test Middle Click only</button>
+<button type="button" v-on:click.right="rightClickAction">Test Right Click only</button>
+<hr>
+<input type="text" name="test_enter" id="test_enter" v-on:keyup.enter="actionOnEnter" placeholder="Type and press enter...">
+<hr>
+<form id="personal" v-on:submit.prevent="submitPersonalForm">
+    <input type="text" name="full_name" id="full_name">
+    <button type="submit">
+        Submit
+    </button>
+</form>
+<p>{{ data }}</p>
+```
+
+## Part 10
+#### v-once directive
+
+```js
+data() {
+    return {
+        counter: 6
+    };
+},
+methods: {
+    addToCounter () {
+        this.counter ++;
+    }
+}
+```
+```html
+<button type="button" v-on:click="addToCounter">Add to counter</button>
+<p v-once>
+    First value : {{ counter }}
+</p>
+<p>
+    New value : {{ counter }}
+</p>
 ```
