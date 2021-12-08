@@ -12,6 +12,7 @@
 * <a href="#part-9">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
 * <a href="#part-10">Part 10: v-once</a>
 * <a href="#part-11">Part 11: v-model directive: two-way data binding (v-on + v-bind)</a>
+* <a href="#part-12">Part 12: computed properties</a>
 
 ## Part 1
 #### create vue instance
@@ -284,7 +285,7 @@ methods: {
         this.data = '-';
     }
 }
-````
+```
 ```html
 <form v-on:submit.prevent="submitForm">
     <input type="text" name="fullName" id="fullName" v-model="fullName" value="" />
@@ -292,4 +293,29 @@ methods: {
     <button type="button" v-on:click="resetForm">Reset</button>
 </form>
 <p>{{ data }}</p>
+```
+
+## Part 12
+#### computed properties
+
+Note: computed properties runs once after vue initialization but only runs again after dependencies changing.
+```js
+    data() {
+        return {
+            name: '',
+            last_name: '',
+            data: ''
+        };
+    },
+    computed: {
+        fullName() {
+            return 'Your full name is: ' + this.name + ' ' + this.last_name;
+        }
+    }
+```
+```html
+    <input type="text" name="name" id="name" v-model="name" value="" placeholder="First name" />
+    <input type="text" name="last_name" id="last_name" v-model="last_name" value="" placeholder="Last name" />
+    <hr>
+    <p>{{ fullName }}</p>
 ```
