@@ -10,6 +10,7 @@
 * <a href="#part-7">Part 7: event arguments</a>
 * <a href="#part-8">Part 8: v-on:input directive</a>
 * <a href="#part-9">Part 9: v-on:click and v-on:submit directives, Event modifiers</a>
+* <a href="#part-10">Part 10: v-once</a>
 
 ## Part 1
 #### create vue instance
