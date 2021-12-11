@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Part 4</title>
+    <title>Part 5</title>
     <script src="../../vue3.js"></script>
 </head>
 <body>
@@ -12,8 +12,18 @@
     <hr>
     <p v-if="users.length === 0">No user found...</p>
     <ul v-else>
-        <li v-for="user in users">
-            {{ user }}
+        <li v-for="(user, index) in users">
+            {{ user }} - {{ index }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(test, key) in tests">
+            {{ key }} : {{ test }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="number in 10">
+            {{ number }}
         </li>
     </ul>
 </div>
