@@ -4,3 +4,4 @@ each part has its own code to understand better :)
 
 ## Quick Links
 * <a href="https://github.com/sinarajabpour1998/vue-docs/tree/master/Basics%20and%20Core%20concepts">Part 1: Basics and Core concepts</a>
+* <a href="#">Part 2: Conditional rendering and lists</a>
