@@ -2,6 +2,9 @@
 
 ## Quick Links
 * <a href="#part-1">Part 1: create vue instance</a>
+* <a href="#part-2">Part 2: v-if, v-else-if and v-else directives</a>
+* <a href="#part-3">Part 3: v-show directive</a>
+* <a href="#part-4">Part 4: v-for directive</a>
 
 ## Part 1
 #### v-if directive
@@ -33,5 +36,11 @@ users: []
 </ul>
 ```
 
+## Part 4
+#### v-for directive
 
-
+```html
+<li v-for="user in users">
+    {{ user }}
+</li>
+```

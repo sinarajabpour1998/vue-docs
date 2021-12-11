@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" id="user" v-model="user" />
+    <button type="button" @click="addUser">Add user</button>
+    <hr>
+    <p v-if="users.length === 0">No user found...</p>
+    <ul v-else>
+        <li v-for="user in users">
+            {{ user }}
+        </li>
+    </ul>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
