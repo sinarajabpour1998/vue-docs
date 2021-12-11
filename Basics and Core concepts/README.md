@@ -381,3 +381,23 @@ changeBorderColor (area) {
     }
 }
 ```
+
+## Part 17
+#### dynamic classes using computed properties
+
+```html
+<div class="area" @click="changeBorderColor('A')" :class="changeBorderClass('A')">
+</div>
+```
+
+```js
+changeBorderClass (area) {
+    if (area === 'A') {
+        return '{active: this.BorderA}';
+    } else if (area === 'B') {
+        return '{active: this.BorderB}';
+    }else {
+        return '{active: this.BorderC}';
+    }
+}
+```
