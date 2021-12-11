@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Part 2</title>
+    <title>Part 3</title>
     <script src="../../vue3.js"></script>
 </head>
 <body>
@@ -10,8 +10,8 @@
     <input type="text" id="user" v-model="user" />
     <button type="button" @click="addUser">Add user</button>
     <hr>
-    <p v-if="users.length === 0">No user found...</p>
-    <ul v-else>
+    <p v-show="users.length === 0">No user found...</p>
+    <ul v-show="users.length > 0">
         <li></li>
     </ul>
 </div>
