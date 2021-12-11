@@ -14,6 +14,7 @@
 * <a href="#part-11">Part 11: v-model directive: two-way data binding (v-on + v-bind)</a>
 * <a href="#part-12">Part 12: computed properties</a>
 * <a href="#part-13">Part 13: watchers</a>
+* <a href="#part-14">Part 14: v-on and v-bind alternatives</a>
 
 ## Part 1
 #### create vue instance
@@ -336,4 +337,7 @@ Note: computed properties runs once after vue initialization but only runs again
         }
     },
 ```
+
+## Part 14
+#### v-on and v-bind alternatives
 

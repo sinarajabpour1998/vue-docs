@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 14</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+    <button type="button" v-on:click="decreaseCounter">Decrease Counter</button>
+    <button type="button" @click="increaseCounter">Increase Counter</button>
+    <input type="text" v-bind:value="counter" id="second-counter">
+    <input type="text" :value="counter" id="first-counter">
+    <hr>
+    <p>{{ counter }}</p>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
