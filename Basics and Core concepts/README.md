@@ -341,5 +341,26 @@ Note: computed properties runs once after vue initialization but only runs again
 ## Part 14
 #### v-on and v-bind alternatives
 
+```html
 v-on:click="method" equals to @click="method"
+
 v-bind:value="variable" equals to :value="variable"
+```
+
+## Part 15
+#### dynamic in-line styling
+
+```html
+<div class="area" @click="changeBorderColor" :style="{borderColor: color}"></div>
+```
+
+```js
+changeBorderColor () {
+    if (this.color === 'aquamarine') {
+        this.color = 'red';
+    }else {
+        this.color = 'aquamarine';
+    }
+}
+```
+

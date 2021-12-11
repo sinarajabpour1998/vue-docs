@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 15</title>
+    <script src="../../vue3.js"></script>
+    <style>
+        .area{
+            display: inline-flex;
+            width: 350px;
+            height: 350px;
+            background-color: beige;
+            margin-right: 25px;
+            border: 2px solid aquamarine;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="area" @click="changeBorderColor" :style="{borderColor: color}">
+
+    </div>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
