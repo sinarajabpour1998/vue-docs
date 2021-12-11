@@ -341,3 +341,5 @@ Note: computed properties runs once after vue initialization but only runs again
 ## Part 14
 #### v-on and v-bind alternatives
 
+v-on:click="method" equals to @click="method"
+v-bind:value="variable" equals to :value="variable"
