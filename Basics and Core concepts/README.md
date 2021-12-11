@@ -15,6 +15,8 @@
 * <a href="#part-12">Part 12: computed properties</a>
 * <a href="#part-13">Part 13: watchers</a>
 * <a href="#part-14">Part 14: v-on and v-bind alternatives</a>
+* <a href="#part-15">Part 15: dynamic in-line styling</a>
+* <a href="#part-16">Part 16: dynamic class styling</a>
 
 ## Part 1
 #### create vue instance
@@ -364,3 +366,18 @@ changeBorderColor () {
 }
 ```
 
+## Part 16
+#### dynamic class styling
+
+```html
+<div class="area" @click="changeBorderColor('A')" :class="{active: BorderA}">
+</div>
+```
+
+```js
+changeBorderColor (area) {
+    if (area === 'A') {
+        this.BorderA = !this.BorderA;
+    }
+}
+```
