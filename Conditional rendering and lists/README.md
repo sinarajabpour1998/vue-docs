@@ -7,6 +7,7 @@
 * <a href="#part-4">Part 4: v-for directive</a>
 * <a href="#part-5">Part 5: v-for index and key, v-for on objects and numbers</a>
 * <a href="#part-6">Part 6: Remove item from list</a>
+* <a href="#part-7">Part 7: List key</a>
 
 ## Part 1
 #### v-if directive
@@ -79,4 +80,16 @@ tests: {'name': 'ali', 'age': 26, 'job': 'IT'}
 removeUser(index) {
     this.users.splice(index, 1);
 }
+```
+
+## Part 7
+#### list key
+
+```html
+<li v-for="(user, index) in users" :key="user">
+    {{ user }} - {{ index }} -
+    <a href="#" @click.prevent="removeUser(index)">Delete</a>
+    <br>
+    <input type="text" @click.stop value="">
+</li>
 ```

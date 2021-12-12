@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 6</title>
+    <script src="../../vue3.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" id="user" v-model="user" />
+    <button type="button" @click="addUser">Add user</button>
+    <hr>
+    <p v-if="users.length === 0">No user found...</p>
+    <ul v-else>
+        <li v-for="(user, index) in users" :key="user">
+            {{ user }} - {{ index }} -
+            <a href="#" @click.prevent="removeUser(index)">Delete</a>
+            <br>
+            <input type="text" @click.stop value="">
+        </li>
+    </ul>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
